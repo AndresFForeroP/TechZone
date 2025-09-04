@@ -1,0 +1,2 @@
+CREATE OR REPLACE FUNCTION procedimiento ()
+RETURNS ;

@@ -1,0 +1,2 @@
+-- primera consulta
+SELECT * FROM; 

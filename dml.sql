@@ -8,7 +8,9 @@ INSERT INTO productos (nombre, categoria, precio, stock) VALUES
 ('Monitor LG 27"', 'Tecnología', 320.00, 8),
 ('Mouse Inalámbrico', 'Tecnología', 25.00, 30),
 ('Botella de Agua Reusable', 'Hogar', 12.00, 60),
-('Lampara LED', 'Hogar', 18.50, 40);
+('Cargador Portatil Generico', 'Tecnologia', 16, 4)
+('Cargador Portatil Lenovo', 'Tecnologia', 50, 3);
+
 
 INSERT INTO clientes (nombre, correo, telefono, estado) VALUES
 ('Ana Martínez', 'ana.martinez@gmail.com', '555-1234', 'activo'),
@@ -35,8 +37,14 @@ INSERT INTO proveedoresproductos (id_producto, id_proveedor, precio) VALUES
 (8, 1, 20.00),
 (9, 5, 10.00),
 (10, 5, 15.00);
+INSERT INTO ventas (cliente_id, fecha) VALUES
+(1, '2025-08-01 10:00:00'),
+(2, '2025-08-02 14:30:00'),
+(3, '2025-08-03 16:45:00'),
+(4, '2025-08-04 09:15:00'),
+(1, '2025-08-05 11:00:00');
 
-INSERT INTO ventas_detalle (venta_id, producto_id, cantidad, precio_unitario) VALUES
+INSERT INTO ventas_detalle (venta_id,producto_id, cantidad, precio_unitario) VALUES
 (1, 1, 1, 1200.00),
 (1, 6, 2, 80.00),
 (2, 2, 1, 850.00),
@@ -64,3 +72,6 @@ INSERT INTO alertas_stock (producto_id, nombre_producto, mensaje, generado_en) V
 (4, 'Escritorio de Madera', 'Stock bajo: quedan 5 unidades.', '2025-08-06 10:00:00'),
 (7, 'Monitor LG 27"', 'Stock crítico: menos de 10 unidades.', '2025-08-07 11:30:00'),
 (1, 'Laptop Lenovo ThinkPad', 'Stock bajo: solo 10 unidades.', '2025-08-08 15:00:00');
+
+SELECT * FROM productos
+WHERE stock < 5;

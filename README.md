@@ -87,10 +87,11 @@ Consultas avanzadas obligatorias:
 6. Clientes que no han comprado en los últimos 6 meses.  
 
 ### 5. **procedureAndFunctions.sql**
-- Procedimiento para registrar una venta validando:  
-  - Existencia del cliente.  
-  - Disponibilidad de stock.  
-  - Uso de **transacciones y manejo de errores con RAISE**.  
+- Un procedimiento almacenado para registrar una venta.
+- Validar que el cliente exista.
+- Verificar que el stock sea suficiente antes de procesar la venta.
+- Si no hay stock suficiente, Notificar por medio de un mensaje en consola usando RAISE.
+- Si hay stock, se realiza el registro de la venta.
 
 ### 6. **Triggers**
 - Actualización automática de stock al registrar ventas.  

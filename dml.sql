@@ -72,6 +72,3 @@ INSERT INTO alertas_stock (producto_id, nombre_producto, mensaje, generado_en) V
 (4, 'Escritorio de Madera', 'Stock bajo: quedan 5 unidades.', '2025-08-06 10:00:00'),
 (7, 'Monitor LG 27"', 'Stock crítico: menos de 10 unidades.', '2025-08-07 11:30:00'),
 (1, 'Laptop Lenovo ThinkPad', 'Stock bajo: solo 10 unidades.', '2025-08-08 15:00:00');
-
-SELECT * FROM productos
-WHERE stock < 5;

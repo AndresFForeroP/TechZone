@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS ventas (
 CREATE TABLE IF NOT EXISTS ventas_detalle (
   id SERIAL PRIMARY KEY,
   venta_id INTEGER NOT NULL,
-  producto_id INTEGER NOT NULL REFERENCES productos(id),
+  producto_id INTEGER NOT NULL,
   cantidad INTEGER NOT NULL CHECK (cantidad > 0),
   precio_unitario NUMERIC(12,2) NOT NULL CHECK (precio_unitario >= 0)
 );
@@ -64,11 +64,11 @@ CREATE TABLE IF NOT EXISTS alertas_stock (
   generado_en TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
-ALTER TABLE proveedoresproducto ADD CONSTRAINT fk_proveedor_productos_producos FOREIGN KEY(id_producto) REFERENCES productos(id);
-ALTER TABLE proveedoresproducto ADD CONSTRAINT fk_proveedor_productos_proveedor FOREIGN KEY(id_proveedor) REFERENCES proveedores(id);
+ALTER TABLE proveedoresproductos ADD CONSTRAINT fk_proveedor_productos_producos FOREIGN KEY(id_producto) REFERENCES productos(id);
+ALTER TABLE proveedoresproductos ADD CONSTRAINT fk_proveedor_productos_proveedor FOREIGN KEY(id_proveedor) REFERENCES proveedores(id);
 ALTER TABLE ventas ADD CONSTRAINT fk_ventas_cliente FOREIGN KEY(cliente_id) REFERENCES clientes(id);
 ALTER TABLE ventas_detalle ADD CONSTRAINT fk_ventas_detalle_venta FOREIGN KEY(venta_id) REFERENCES ventas(id);
 ALTER TABLE ventas_detalle ADD CONSTRAINT fk_ventas_detalle_producto FOREIGN KEY(producto_id) REFERENCES productos(id);
 ALTER TABLE historial_precios ADD CONSTRAINT fk_historial_precios_producto FOREIGN KEY(producto_id) REFERENCES productos(id);
-ALTER TABLE audioria_ventas ADD CONSTRAINT fk_auditoria_ventas FOREIGN KEY(venta_id) REFERENCES ventas(id);
+ALTER TABLE auditoria_ventas ADD CONSTRAINT fk_auditoria_ventas FOREIGN KEY(venta_id) REFERENCES ventas(id);
 ALTER TABLE alertas_stock ADD CONSTRAINT fk_alertas_stock FOREIGN KEY(producto_id) REFERENCES productos(id);

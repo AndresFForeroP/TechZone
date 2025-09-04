@@ -8,7 +8,7 @@ INSERT INTO productos (nombre, categoria, precio, stock) VALUES
 ('Monitor LG 27"', 'Tecnología', 320.00, 8),
 ('Mouse Inalámbrico', 'Tecnología', 25.00, 30),
 ('Botella de Agua Reusable', 'Hogar', 12.00, 60),
-('Cargador Portatil Generico', 'Tecnologia', 16, 4)
+('Cargador Portatil Generico', 'Tecnologia', 16, 4),
 ('Cargador Portatil Lenovo', 'Tecnologia', 50, 3);
 
 
